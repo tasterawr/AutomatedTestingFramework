@@ -1,10 +1,10 @@
-package org.example.di;
+package di;
 
 import dagger.Module;
 import dagger.Provides;
-import org.example.pages.CataloguePage;
-import org.example.pages.MainPage;
-import org.example.pages.PaintingsByTypePage;
+import pages.CataloguePage;
+import pages.MainPage;
+import pages.PaintingsByTypePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;

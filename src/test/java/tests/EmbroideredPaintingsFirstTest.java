@@ -1,14 +1,12 @@
-package org.example.tests;
+package tests;
 
-import org.example.pages.CataloguePage;
-import org.example.pages.MainPage;
-import org.example.pages.PaintingsByTypePage;
-import org.example.util.WebDriverProvider;
+import pages.CataloguePage;
+import pages.MainPage;
+import pages.PaintingsByTypePage;
 import org.testng.annotations.*;
+import reporting.TestFailureListener;
 
-import javax.inject.Inject;
-
-
+@Listeners({TestFailureListener.class})
 public class EmbroideredPaintingsFirstTest extends BaseTest {
     private MainPage mainPage;
     private CataloguePage cataloguePage;
@@ -21,7 +19,7 @@ public class EmbroideredPaintingsFirstTest extends BaseTest {
         this.paintingsByTypePage = new PaintingsByTypePage(driver);
     }
 
-    @Test
+    @Test(description = "Check painting is available test")
     public void checkPaintingInStock() {
         mainPage.open()
                 .clickCatalogueBtn();

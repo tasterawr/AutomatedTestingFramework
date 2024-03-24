@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+    <listeners>
+        <listener class-name="reporting.TestFailureListener"></listener>
+    </listeners>
     <test verbose="2" preserve-order="true"
-          name="C:/Users/LOKTEVS/IdeaProjects/AutomatedTestingFramework/src/main/java/org/example/tests/EmbroideredPaintingsFirstTest.java">
+          name="C:/Users/LOKTEVS/IdeaProjects/AutomatedTestingFramework/src/test/java/tests/EmbroideredPaintingsFirstTest.java">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="org.example.tests.EmbroideredPaintingsFirstTest">
+            <class name="tests.EmbroideredPaintingsFirstTest">
                 <methods>
                     <include name="checkPaintingInStock"/>
                 </methods>

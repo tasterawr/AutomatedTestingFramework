@@ -1,4 +1,4 @@
-package org.example.pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -41,7 +41,9 @@ public class PaintingsByTypePage extends BasePage {
 
     public PaintingsByTypePage checkPaintingInStock(String paintingName) {
         List<WebElement> elements = driver.findElements(By.xpath("//a/div[contains(., \"" + paintingName + "\")]"));
-        Assert.assertFalse(elements.isEmpty());
+        Assert.assertTrue(elements.isEmpty());
         return this;
     }
+
+    public PaintingsByTypePage goToPaintingDetails()
 }

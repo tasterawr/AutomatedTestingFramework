@@ -1,10 +1,9 @@
-package org.example.di;
+package di;
 
 import dagger.Component;
-import org.example.pages.CataloguePage;
-import org.example.pages.MainPage;
-import org.example.pages.PaintingsByTypePage;
-import org.openqa.selenium.WebDriver;
+import pages.CataloguePage;
+import pages.MainPage;
+import pages.PaintingsByTypePage;
 
 @Component(modules = PageModule.class)
 public interface AppGraph {
