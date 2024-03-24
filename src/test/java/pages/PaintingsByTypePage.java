@@ -9,6 +9,8 @@ import org.testng.Assert;
 import java.util.List;
 
 public class PaintingsByTypePage extends BasePage {
+    @FindBy(css = ".ssize")
+    WebElement firstElementHeader;
     @FindBy(css = ".heart")
     WebElement firstElementFavouritesBtn;
 
@@ -28,6 +30,11 @@ public class PaintingsByTypePage extends BasePage {
         return this;
     }
 
+    public String getFirstElementHeader() {
+        waitForElementVisible(firstElementHeader);
+        return firstElementHeader.getText();
+    }
+
     public PaintingsByTypePage addFilter(String filterName) {
         if (filterName.equals("Городской пейзаж")) {
             waitForElementVisible(cityscapeFilterCb);
@@ -41,9 +48,19 @@ public class PaintingsByTypePage extends BasePage {
 
     public PaintingsByTypePage checkPaintingInStock(String paintingName) {
         List<WebElement> elements = driver.findElements(By.xpath("//a/div[contains(., \"" + paintingName + "\")]"));
-        Assert.assertTrue(elements.isEmpty());
+        Assert.assertFalse(elements.isEmpty());
         return this;
     }
 
-    public PaintingsByTypePage goToPaintingDetails()
+    public PaintingsByTypePage goToPaintingDetails(String paintingName) {
+        WebElement element = driver.findElement(By.xpath("//a/div[contains(., \"" + paintingName + "\")]/parent::a"));
+        element.click();
+        return this;
+    }
+
+    public PaintingsByTypePage goToFavourites() {
+        waitForElementVisible(favouritesBtn);
+        favouritesBtn.click();
+        return this;
+    }
 }

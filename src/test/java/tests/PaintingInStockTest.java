@@ -7,7 +7,7 @@ import org.testng.annotations.*;
 import reporting.TestFailureListener;
 
 @Listeners({TestFailureListener.class})
-public class EmbroideredPaintingsFirstTest extends BaseTest {
+public class PaintingInStockTest extends BaseTest {
     private MainPage mainPage;
     private CataloguePage cataloguePage;
     private PaintingsByTypePage paintingsByTypePage;
@@ -19,12 +19,13 @@ public class EmbroideredPaintingsFirstTest extends BaseTest {
         this.paintingsByTypePage = new PaintingsByTypePage(driver);
     }
 
+    @Parameters("paintingName")
     @Test(description = "Check painting is available test")
-    public void checkPaintingInStock() {
+    public void checkPaintingInStock(String paintingName) {
         mainPage.open()
                 .clickCatalogueBtn();
         cataloguePage.goToEmbroideredPaintings();
         paintingsByTypePage.addFilter("Городской пейзаж")
-                .checkPaintingInStock("Трамвайный путь");
+                .checkPaintingInStock(paintingName);
     }
 }
