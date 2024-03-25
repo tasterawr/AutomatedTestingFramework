@@ -19,6 +19,9 @@ public abstract class BasePage {
     @FindBy(xpath = "//a[@href=\"//artnow.ru/ru/gallery.html\"]")
     protected WebElement catalogueBtn;
 
+    @FindBy(css = ".search-bar .inp.scLarge")
+    protected WebElement searchInput;
+
     protected WebDriver driver;
 
     public BasePage(WebDriver driver) {

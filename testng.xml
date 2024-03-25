@@ -42,4 +42,17 @@
             </class>
         </classes>
     </test>
+
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/LOKTEVS/IdeaProjects/AutomatedTestingFramework/src/test/java/tests/SearchTest.java">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="containingString" value="Жираф"></parameter>
+        <classes>
+            <class name="tests.SearchTest">
+                <methods>
+                    <include name="checkFirstElementNameContainsString"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
