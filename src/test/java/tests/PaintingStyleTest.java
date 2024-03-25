@@ -6,23 +6,23 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.CataloguePage;
 import pages.MainPage;
-import pages.PaintingDetailsPage;
-import pages.PaintingsByTypePage;
+import pages.ProductDetailsPage;
+import pages.ProductsByTypePage;
 import reporting.TestFailureListener;
 
 @Listeners({TestFailureListener.class})
 public class PaintingStyleTest extends BaseTest {
     private MainPage mainPage;
     private CataloguePage cataloguePage;
-    private PaintingsByTypePage paintingsByTypePage;
-    private PaintingDetailsPage paintingDetailsPage;
+    private ProductsByTypePage productsByTypePage;
+    private ProductDetailsPage productDetailsPage;
 
     @BeforeMethod
     public void initialize() {
         this.mainPage = new MainPage(driver);
         this.cataloguePage = new CataloguePage(driver);
-        this.paintingsByTypePage = new PaintingsByTypePage(driver);
-        this.paintingDetailsPage = new PaintingDetailsPage(driver);
+        this.productsByTypePage = new ProductsByTypePage(driver);
+        this.productDetailsPage = new ProductDetailsPage(driver);
     }
 
     @Parameters({"paintingName", "paintingStyle"})
@@ -31,8 +31,8 @@ public class PaintingStyleTest extends BaseTest {
         mainPage.open()
                 .clickCatalogueBtn();
         cataloguePage.goToEmbroideredPaintings();
-        paintingsByTypePage.addFilter("Городской пейзаж")
+        productsByTypePage.addFilter("Городской пейзаж")
                 .goToPaintingDetails(paintingName);
-        paintingDetailsPage.checkStyle(paintingStyle);
+        productDetailsPage.checkStyle(paintingStyle);
     }
 }

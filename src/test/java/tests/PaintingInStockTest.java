@@ -2,7 +2,7 @@ package tests;
 
 import pages.CataloguePage;
 import pages.MainPage;
-import pages.PaintingsByTypePage;
+import pages.ProductsByTypePage;
 import org.testng.annotations.*;
 import reporting.TestFailureListener;
 
@@ -10,13 +10,13 @@ import reporting.TestFailureListener;
 public class PaintingInStockTest extends BaseTest {
     private MainPage mainPage;
     private CataloguePage cataloguePage;
-    private PaintingsByTypePage paintingsByTypePage;
+    private ProductsByTypePage productsByTypePage;
 
     @BeforeMethod
     public void initialize() {
         this.mainPage = new MainPage(driver);
         this.cataloguePage = new CataloguePage(driver);
-        this.paintingsByTypePage = new PaintingsByTypePage(driver);
+        this.productsByTypePage = new ProductsByTypePage(driver);
     }
 
     @Parameters("paintingName")
@@ -25,7 +25,7 @@ public class PaintingInStockTest extends BaseTest {
         mainPage.open()
                 .clickCatalogueBtn();
         cataloguePage.goToEmbroideredPaintings();
-        paintingsByTypePage.addFilter("Городской пейзаж")
+        productsByTypePage.addFilter("Городской пейзаж")
                 .checkPaintingInStock(paintingName);
     }
 }

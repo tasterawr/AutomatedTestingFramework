@@ -11,7 +11,10 @@ import java.time.Duration;
 
 public abstract class BasePage {
     private static final int WAIT_FOR_ELEMENT_TIMEOUT_SECONDS = 10;
-    public static final int DEFAULT_TIME = 1000;
+
+    private static final int WAIT_FOR_ELEMENT_CLICKABLE_TIMEOUT_SECONDS = 20;
+
+    public static final int DEFAULT_TIME = 3000;
 
     @FindBy(css = "img[alt=\"Избранное\"]")
     protected WebElement favouritesBtn;
@@ -35,6 +38,10 @@ public abstract class BasePage {
 
     protected void waitForElementVisible(WebElement element) {
         new WebDriverWait(driver, Duration.ofSeconds(WAIT_FOR_ELEMENT_TIMEOUT_SECONDS)).until(ExpectedConditions.visibilityOf(element));
+    }
+
+    protected void waitForElementClickable(WebElement element) {
+        new WebDriverWait(driver, Duration.ofSeconds(WAIT_FOR_ELEMENT_CLICKABLE_TIMEOUT_SECONDS)).until(ExpectedConditions.elementToBeClickable(element));
     }
 
     protected void waitForElementEnable(WebElement element) {

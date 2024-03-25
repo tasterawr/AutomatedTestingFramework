@@ -3,11 +3,11 @@ package di;
 import dagger.Component;
 import pages.CataloguePage;
 import pages.MainPage;
-import pages.PaintingsByTypePage;
+import pages.ProductsByTypePage;
 
 @Component(modules = PageModule.class)
 public interface AppGraph {
     MainPage getMainPage();
     CataloguePage getCataloguePage();
-    PaintingsByTypePage getPaintingsByTypePage();
+    ProductsByTypePage getPaintingsByTypePage();
 }

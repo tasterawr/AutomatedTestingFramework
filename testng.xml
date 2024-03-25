@@ -55,4 +55,18 @@
             </class>
         </classes>
     </test>
+
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/LOKTEVS/IdeaProjects/AutomatedTestingFramework/src/test/java/tests/FavouritesPriceTest.java">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="directionName" value="Ювелирное искусство"></parameter>
+        <parameter name="productIndex" value="0"></parameter>
+        <classes>
+            <class name="tests.FavouritesPriceTest">
+                <methods>
+                    <include name="checkPriceInFavouritesMatch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>

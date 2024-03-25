@@ -4,7 +4,7 @@ import dagger.Module;
 import dagger.Provides;
 import pages.CataloguePage;
 import pages.MainPage;
-import pages.PaintingsByTypePage;
+import pages.ProductsByTypePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -26,8 +26,8 @@ public class PageModule {
     }
 
     @Provides
-    public PaintingsByTypePage paintingsByTypePage(WebDriver driver){
-        return new PaintingsByTypePage(driver);
+    public ProductsByTypePage paintingsByTypePage(WebDriver driver){
+        return new ProductsByTypePage(driver);
     }
 
     @Provides

@@ -8,9 +8,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import javax.xml.xpath.XPath;
 import java.util.List;
 
 public class MainPage extends BasePage {
+    @FindBy(css = ".menu-group.gids")
+    WebElement showMoreDirectionsBtn;
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -28,6 +31,17 @@ public class MainPage extends BasePage {
         return this;
     }
 
+    public MainPage clickShowMoreDirectionsBtn() {
+        waitForElementVisible(showMoreDirectionsBtn);
+        showMoreDirectionsBtn.click();
+        return this;
+    }
+
+    public MainPage clickDirection(String directionName) {
+        driver.findElement(By.xpath("//a[contains(.,'"+ directionName + "')]")).click();
+        return this;
+    }
+
     public MainPage fillSearchInputAndSearch(String searchRequest) {
         waitForElementEnable(searchInput);
         searchInput.sendKeys(searchRequest);
@@ -36,6 +50,7 @@ public class MainPage extends BasePage {
     }
 
     public MainPage checkFirstElementNameContainsString(String str) {
+        timeSleep();
         WebElement firstPost = driver.findElement(By.className("post"));
         List<WebElement> elements = firstPost.findElements(By.xpath("//a/div[contains(., '" + str + "')]"));
         Assert.assertFalse(elements.isEmpty());

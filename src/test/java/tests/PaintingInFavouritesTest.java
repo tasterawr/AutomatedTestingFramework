@@ -1,27 +1,24 @@
 package tests;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.CataloguePage;
 import pages.FavouritesPage;
 import pages.MainPage;
-import pages.PaintingsByTypePage;
+import pages.ProductsByTypePage;
 import reporting.TestFailureListener;
 
 @Listeners({TestFailureListener.class})
 public class PaintingInFavouritesTest extends BaseTest {
     private MainPage mainPage;
     private CataloguePage cataloguePage;
-    private PaintingsByTypePage paintingsByTypePage;
+    private ProductsByTypePage productsByTypePage;
     private FavouritesPage favouritesPage;
 
     @BeforeMethod
     public void initialize() {
         this.mainPage = new MainPage(driver);
         this.cataloguePage = new CataloguePage(driver);
-        this.paintingsByTypePage = new PaintingsByTypePage(driver);
+        this.productsByTypePage = new ProductsByTypePage(driver);
         this.favouritesPage = new FavouritesPage(driver);
     }
 
@@ -29,9 +26,14 @@ public class PaintingInFavouritesTest extends BaseTest {
     public void checkPaintingInFavourites() {
         mainPage.open().clickCatalogueBtn();
         cataloguePage.goToBatikPaintings();
-        String firstElementHeader = paintingsByTypePage.getFirstElementHeader();
-        paintingsByTypePage.addFirstToFavourites()
+        String firstElementHeader = productsByTypePage.getFirstProductHeader();
+        productsByTypePage.clickFavouritesBtn()
                 .goToFavourites();
         favouritesPage.checkFirstElementHeader(firstElementHeader);
+    }
+
+    @AfterMethod
+    public void finish() {
+        productsByTypePage.clickFavouritesBtn();
     }
 }
