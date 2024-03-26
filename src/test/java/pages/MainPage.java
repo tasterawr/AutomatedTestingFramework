@@ -12,7 +12,7 @@ import java.util.List;
 
 public class MainPage extends BasePage {
     @FindBy(xpath = "//li[contains(.,'Показать еще')]")
-    WebElement showMoreDirectionsBtn;
+    private WebElement showMoreDirectionsBtn;
 
     public MainPage(WebDriver driver) {
         super(driver);

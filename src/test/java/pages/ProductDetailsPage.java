@@ -8,7 +8,7 @@ import org.testng.Assert;
 
 public class ProductDetailsPage extends BasePage{
     @FindBy(xpath = "//span[contains(., 'Стиль')]/parent::div/a")
-    WebElement styleLink;
+    private WebElement styleLink;
 
     public ProductDetailsPage(WebDriver driver) {
         super(driver);

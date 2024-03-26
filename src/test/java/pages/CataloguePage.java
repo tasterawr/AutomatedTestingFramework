@@ -8,10 +8,10 @@ import org.openqa.selenium.support.FindBy;
 public class CataloguePage extends BasePage {
 
     @FindBy(xpath = "//a[@href=\"//artnow.ru/vyshitye-kartiny-kupit.html\"]/div")
-    WebElement embroideredPaintingsBtn;
+    private WebElement embroideredPaintingsBtn;
 
     @FindBy(xpath = "//a[@href=\"//artnow.ru/batik-kartiny-kupit.html\"]/div")
-    WebElement batikPaintingsBtn;
+    private WebElement batikPaintingsBtn;
 
     public CataloguePage(WebDriver driver) {
         super(driver);

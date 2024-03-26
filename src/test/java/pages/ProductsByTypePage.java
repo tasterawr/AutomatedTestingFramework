@@ -11,15 +11,15 @@ import java.util.List;
 
 public class ProductsByTypePage extends BasePage {
     @FindBy(css = ".ssize")
-    WebElement firstProductHeader;
+    private WebElement firstProductHeader;
     @FindBy(css = ".heart")
-    WebElement firstProductFavouritesBtn;
+    private WebElement firstProductFavouritesBtn;
 
     @FindBy(css ="input[id=\"genre257\"]")
-    WebElement cityscapeFilterCb;
+    private WebElement cityscapeFilterCb;
 
     @FindBy(css = "div[id=\"applymsg\"]")
-    WebElement applyBtn;
+    private WebElement applyBtn;
 
     public ProductsByTypePage(WebDriver driver) {
         super(driver);

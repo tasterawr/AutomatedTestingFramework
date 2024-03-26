@@ -9,10 +9,10 @@ import org.testng.Assert;
 
 public class FavouritesPage extends BasePage {
     @FindBy(css = ".post")
-    WebElement firstProduct;
+    private WebElement firstProduct;
 
     @FindBy(css = ".ssize")
-    WebElement firstProductHeader;
+    private WebElement firstProductHeader;
 
     public FavouritesPage(WebDriver driver) {
         super(driver);
