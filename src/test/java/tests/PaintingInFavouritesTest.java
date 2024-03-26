@@ -29,7 +29,7 @@ public class PaintingInFavouritesTest extends BaseTest {
         String firstElementHeader = productsByTypePage.getFirstProductHeader();
         productsByTypePage.clickFavouritesBtn()
                 .goToFavourites();
-        favouritesPage.checkFirstElementHeader(firstElementHeader);
+        favouritesPage.checkFirstProductHeader(firstElementHeader);
     }
 
     @AfterMethod

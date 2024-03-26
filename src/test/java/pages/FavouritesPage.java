@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,12 +18,14 @@ public class FavouritesPage extends BasePage {
         super(driver);
     }
 
-    public FavouritesPage checkFirstElementHeader(String text) {
+    @Step("Проверка, что заголовок первого продукта соответствует указанной строке")
+    public FavouritesPage checkFirstProductHeader(String text) {
         waitForElementVisible(firstProductHeader);
         Assert.assertEquals(firstProductHeader.getText().replace("\n", " "), text.replace("\n", " "));
         return this;
     }
 
+    @Step("Проверка, что цена первого продукта соответствует указанной цене")
     public FavouritesPage checkFirstProductPriceMatches(String expectedPrice) {
         String actualPrice = firstProduct.findElement(By.className("price")).getText();
         Assert.assertEquals(actualPrice, expectedPrice);

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" thread-count="3" parallel="tests">
+<suite name="All Test Suite" thread-count="2" parallel="tests">
     <listeners>
         <listener class-name="reporting.TestFailureListener"></listener>
     </listeners>
     <test verbose="2" preserve-order="true"
           name="C:/Users/LOKTEVS/IdeaProjects/AutomatedTestingFramework/src/test/java/tests/PaintingInStockTest.java">
-        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browser" value="firefox"></parameter>
         <parameter name="paintingName" value="Трамвайный путь"></parameter>
         <classes>
             <class name="tests.PaintingInStockTest">
@@ -19,7 +19,7 @@
 
     <test verbose="2" preserve-order="true"
           name="C:/Users/LOKTEVS/IdeaProjects/AutomatedTestingFramework/src/test/java/tests/PaintingStyleTest.java">
-        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browser" value="firefox"></parameter>
         <parameter name="paintingName" value="Трамвайный путь"></parameter>
         <parameter name="paintingStyle" value="Реализм"></parameter>
         <classes>
@@ -33,7 +33,7 @@
 
     <test verbose="2" preserve-order="true"
           name="C:/Users/LOKTEVS/IdeaProjects/AutomatedTestingFramework/src/test/java/tests/PaintingInFavouritesTest.java">
-        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browser" value="firefox"></parameter>
         <classes>
             <class name="tests.PaintingInFavouritesTest">
                 <methods>
@@ -45,7 +45,7 @@
 
     <test verbose="2" preserve-order="true"
           name="C:/Users/LOKTEVS/IdeaProjects/AutomatedTestingFramework/src/test/java/tests/SearchTest.java">
-        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browser" value="firefox"></parameter>
         <parameter name="containingString" value="Жираф"></parameter>
         <classes>
             <class name="tests.SearchTest">
@@ -58,7 +58,7 @@
 
     <test verbose="2" preserve-order="true"
           name="C:/Users/LOKTEVS/IdeaProjects/AutomatedTestingFramework/src/test/java/tests/FavouritesPriceTest.java">
-        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browser" value="firefox"></parameter>
         <parameter name="directionName" value="Ювелирное искусство"></parameter>
         <parameter name="productIndex" value="0"></parameter>
         <classes>

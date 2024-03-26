@@ -18,6 +18,6 @@ public class SearchTest extends BaseTest {
     public void checkFirstElementNameContainsString(String containingString) {
         mainPage.open()
                 .fillSearchInputAndSearch(containingString)
-                .checkFirstElementNameContainsString(containingString);
+                .checkFirstProductNameContainsString(containingString);
     }
 }

@@ -25,7 +25,7 @@ public class PaintingInStockTest extends BaseTest {
         mainPage.open()
                 .clickCatalogueBtn();
         cataloguePage.goToEmbroideredPaintings();
-        productsByTypePage.addFilter("Городской пейзаж")
-                .checkPaintingInStock(paintingName);
+        productsByTypePage.setGenre("Городской пейзаж")
+                .checkProductInStock(paintingName);
     }
 }

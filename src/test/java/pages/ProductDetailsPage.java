@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,7 +14,9 @@ public class ProductDetailsPage extends BasePage{
         super(driver);
     }
 
+    @Step("Проверка, что стиль продукта соответствует указанному стилю")
     public ProductDetailsPage checkStyle(String style) {
+        timeSleep();
         waitForElementVisible(styleLink);
         String linkText = styleLink.getText();
         Assert.assertEquals(linkText, style);

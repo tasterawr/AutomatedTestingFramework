@@ -31,8 +31,8 @@ public class PaintingStyleTest extends BaseTest {
         mainPage.open()
                 .clickCatalogueBtn();
         cataloguePage.goToEmbroideredPaintings();
-        productsByTypePage.addFilter("Городской пейзаж")
-                .goToPaintingDetails(paintingName);
+        productsByTypePage.setGenre("Городской пейзаж")
+                .goToProductDetails(paintingName);
         productDetailsPage.checkStyle(paintingStyle);
     }
 }

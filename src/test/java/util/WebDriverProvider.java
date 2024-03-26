@@ -12,8 +12,6 @@ public class WebDriverProvider {
         if (browserName.equals("chrome")) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("enable-automation");
-            options.addArguments("--headless");
-            options.addArguments("--window-size=1920,1080");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-extensions");
             options.addArguments("--dns-prefetch-disable");
@@ -23,7 +21,6 @@ public class WebDriverProvider {
         } else if (browserName.equals("firefox")) {
             FirefoxOptions options = new FirefoxOptions();
             options.addArguments("enable-automation");
-            options.addArguments("--headless");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-extensions");
             options.addArguments("--dns-prefetch-disable");
